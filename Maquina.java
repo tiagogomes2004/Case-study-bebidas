@@ -88,6 +88,7 @@ public class Maquina {
     }
 
     public void resetMaquina() {
+        valorInserido = 0;
         bebidas.clear();
         maquinaMoedas.clear();
 

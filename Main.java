@@ -12,7 +12,7 @@ public class Main {
                 case 1 -> maquina.inserirValor();
                 case 2 -> maquina.pedirBebida();
                 case 3 -> maquina.cancelar();
-                case 4 -> maquina.resetMaquina();
+                case 999 -> menuTecnico(maquina);
                 case 0 -> System.out.println("Adeus!!!");
                 default -> System.out.println("Escolha invalida, tente novamente.");
             }
@@ -27,9 +27,23 @@ public class Main {
         System.out.println("1. Inserir moedas");
         System.out.println("2. Escolher bebida");
         System.out.println("3. Cancelar");
-        System.out.println("4. Reset");
         System.out.println("0. Sair");
         System.out.println("Escolha uma opcao: ");
         return teclado.nextInt();
+    }
+
+    public static void menuTecnico(Maquina maquina) {
+        Scanner teclado = new Scanner(System.in);
+        int escolha;
+
+        System.out.println("***************Menu de tecnico***************");
+        System.out.println("1. Reiniciar maquina");
+        System.out.println("0. Sair");
+        System.out.println("Escolha uma opcao: ");
+        escolha = teclado.nextInt();
+
+        if (escolha == 1) {
+            maquina.resetMaquina();
+        }
     }
 }
